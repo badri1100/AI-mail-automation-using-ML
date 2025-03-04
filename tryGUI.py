@@ -7,7 +7,7 @@ import speech_recognition as sr
 import ollama
 from google.generativeai import GenerativeModel, configure
 
-configure(api_key="AIzaSyC0wf_Ur0Y2-bJSBEj4-HYtaOi0i_w9GZw")
+configure(api_key="")
 
 model = GenerativeModel('gemini-1.5-pro')
 # response = model.generate_content('Teach me about how an LLM works')
