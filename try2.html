@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sender</title>
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+    <div id="container">
+        <!-- Your HTML content here -->
+    </div>
+
+    <script>
+        function sendEmails() {
+            var csvFile = document.getElementById('csvFile').files[0];
+            var emailSubject = document.getElementById('emailSubject').value;
+            var emailBody = document.getElementById('emailBody').value;
+
+            if (csvFile && emailSubject && emailBody) {
+                var formData = new FormData();
+                formData.append('csvFile', csvFile);
+                formData.append('emailSubject', emailSubject);
+                formData.append('emailBody', emailBody);
+
+                fetch('/send_emails', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById('status').innerText = "Emails Sent Successfully to: " + data.recipients.join(', ');
+                    } else {
+                        document.getElementById('status').innerText = "Error: " + data.error;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('status').innerText = "Error: " + error;
+                });
+            } else {
+                document.getElementById('status').innerText = "Please fill in all fields.";
+            }
+        }
+    </script>
+</body>
+</html>

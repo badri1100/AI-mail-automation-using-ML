@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #status {
+            margin-top: 10px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <label for="csvFile">Select CSV File:</label><br>
+        <input type="file" id="csvFile" name="csvFile"><br>
+
+        <label for="emailSubject">Email Subject:</label><br>
+        <input type="text" id="emailSubject" name="emailSubject"><br>
+
+        <label for="emailBody">Email Body:</label><br>
+        <textarea id="emailBody" name="emailBody" rows="5"></textarea><br>
+
+        <button onclick="sendEmails()">Send Emails</button>
+        <div id="status"></div>
+    </div>
+
+    <script>
+        function sendEmails() {
+            var csvFile = document.getElementById('csvFile').files[0];
+            var emailSubject = document.getElementById('emailSubject').value;
+            var emailBody = document.getElementById('emailBody').value;
+
+            if (csvFile && emailSubject && emailBody) {
+                var formData = new FormData();
+                formData.append('csvFile', csvFile);
+                formData.append('emailSubject', emailSubject);
+                formData.append('emailBody', emailBody);
+
+                fetch('/send_emails', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.getElementById('status').innerText = "Emails Sent Successfully to: " + data.recipients.join(', ');
+                    } else {
+                        document.getElementById('status').innerText = "Error: " + data.error;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('status').innerText = "Error: " + error;
+                });
+            } else {
+                document.getElementById('status').innerText = "Please fill in all fields.";
+            }
+        }
+    </script>
+</body>
+</html>

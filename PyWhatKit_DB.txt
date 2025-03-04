@@ -1,0 +1,65 @@
+Date: 23/5/2024
+Time: 23:45
+Phone Number: +91 6361723454
+Message: Hello! This is a test message sent using Python and pywhatkit.
+--------------------
+Date: 23/5/2024
+Time: 23:46
+Phone Number: +91 9481914005
+Message: Hello! This is a test message sent using Python and pywhatkit.
+--------------------
+Date: 23/5/2024
+Time: 23:48
+Phone Number: +91 6361723454
+Message: Hello! This is a test message sent using Python and pywhatkit.
+--------------------
+Date: 23/5/2024
+Time: 23:48
+Phone Number: +91 9481914005
+Message: Hello! This is a test message sent using Python and pywhatkit.
+--------------------
+Date: 23/5/2024
+Time: 23:50
+Phone Number: +91 6361723454
+Message: Hello! This is a test message sent using Python and pywhatkit.
+--------------------
+Date: 23/5/2024
+Time: 23:50
+Phone Number: +91 9481914005
+Message: Hello! This is a test message sent using Python and pywhatkit.
+--------------------
+Date: 23/5/2024
+Time: 23:53
+Phone Number: +91 6361723454
+Message: Hello! This is a test message sent using Python and pywhatkit.
+--------------------
+Date: 23/5/2024
+Time: 23:53
+Phone Number: +91 9481914005
+Message: Hello! This is a test message sent using Python and pywhatkit.
+--------------------
+Date: 23/5/2024
+Time: 23:54
+Phone Number: +91 6361723454
+Message: Hello! This is a test message sent using Python and pywhatkit.
+--------------------
+Date: 23/5/2024
+Time: 23:55
+Phone Number: +91 9481914005
+Message: Hello! This is a test message sent using Python and pywhatkit.
+--------------------
+Date: 23/5/2024
+Time: 23:58
+Phone Number: +916361723454
+Message: Hello! This is a test message sent using Python.
+--------------------
+Date: 23/5/2024
+Time: 23:58
+Phone Number: +919481914005
+Message: Hello! This is a test message sent using Python.
+--------------------
+Date: 23/5/2024
+Time: 23:59
+Phone Number: +919113998832
+Message: Hello! This is a test message sent using Python.
+--------------------
