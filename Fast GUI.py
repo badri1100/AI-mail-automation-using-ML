@@ -6,7 +6,7 @@ import speech_recognition as sr
 import ollama
 from google.generativeai import GenerativeModel, configure
 
-configure(api_key="AIzaSyCoWMJYI-g7QDfaEg7KuAVDvBEZs7x0WY0")
+configure(api_key="")
 
 model = GenerativeModel('gemini-1.5-pro')
 
